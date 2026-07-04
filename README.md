@@ -1,6 +1,8 @@
 # UAS_Algoritma_Kelas-B_Kelompok-1
 PROJECT UAS ALGORITMA  Implementasi Struktur Data pada Studi Kasus Nyata
 
+# Sistem Manajemen UGD Rumah Sakit
+
 Seluruh struktur data diimplementasikan **secara manual dari nol**
 (tanpa `queue`, `collections.deque`, `heapq`, `PriorityQueue`, atau
 library struktur data bawaan Python lainnya), murni menggunakan
