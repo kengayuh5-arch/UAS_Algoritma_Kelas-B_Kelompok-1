@@ -10,18 +10,18 @@ Kompleksitas: push O(1), pop O(1), peek O(1), display O(n)
 
 
 class _NodeStack:
-    """Node internal untuk linked list pada Stack."""
-
+    # Sama seperti node di Queue, bedanya di sini cukup 1 pointer arah
+    # karena Stack cuma butuh akses dari 1 ujung (atas/top)
     def __init__(self, data):
         self.data = data
-        self.next = None
+        self.next = None   # menunjuk ke node DI BAWAHNYA (yang masuk lebih dulu)
 
 
 class Stack:
     """Stack (LIFO) diimplementasikan dengan Linked List manual."""
 
     def __init__(self):
-        self.top = None
+        self.top = None    # penanda elemen PALING ATAS (satu-satunya titik akses push/pop)
         self._size = 0
 
     def is_empty(self):
@@ -30,18 +30,18 @@ class Stack:
     def push(self, data):
         """Menambahkan tindakan baru ke puncak stack. O(1)."""
         node_baru = _NodeStack(data)
-        node_baru.next = self.top
-        self.top = node_baru
+        node_baru.next = self.top   # node baru "menunjuk" ke top lama (yang sekarang ada di bawahnya)
+        self.top = node_baru          # top dipindah ke node baru -> node terbaru selalu paling atas
         self._size += 1
 
     def pop(self):
         """Mengeluarkan (membatalkan/undo) tindakan paling atas. O(1)."""
         if self.is_empty():
             return None
-        node_keluar = self.top
-        self.top = self.top.next
+        node_keluar = self.top        # simpan referensi node paling atas
+        self.top = self.top.next      # geser top ke node di bawahnya
         self._size -= 1
-        return node_keluar.data
+        return node_keluar.data        # kembalikan data yang "dibatalkan"
 
     def peek(self):
         """Melihat tindakan paling atas tanpa mengeluarkannya. O(1)."""
@@ -55,12 +55,15 @@ class Stack:
             print("   (Belum ada riwayat tindakan)")
             return
         print("   --- Riwayat Tindakan (terbaru -> terlama) ---")
-        current = self.top
+        current = self.top     # mulai dari top (yang paling baru dimasukkan)
         posisi = 1
         while current is not None:
             print(f"   {posisi}. {current.data}")
-            current = current.next
+            current = current.next  # turun ke node berikutnya (lebih lama)
             posisi += 1
+        # Catatan penting: karena mulai dari top, urutan tampilan otomatis
+        # dari yang PALING BARU ke yang PALING LAMA -> ini yang membedakan
+        # Stack (LIFO) dari Queue (FIFO)
 
     def size(self):
         return self._size

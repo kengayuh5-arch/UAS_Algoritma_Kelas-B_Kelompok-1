@@ -18,11 +18,15 @@ class Pasien:
     """
 
     def __init__(self, id_pasien, nama, gejala, tingkat_darurat=None):
-        self.id_pasien = id_pasien
-        self.nama = nama
-        self.gejala = gejala
-        self.tingkat_darurat = tingkat_darurat
+        self.id_pasien = id_pasien              # key unik, dipakai BST untuk insert/search/delete
+        self.nama = nama                         # nama pasien, hanya untuk ditampilkan
+        self.gejala = gejala                     # keluhan awal saat registrasi
+        self.tingkat_darurat = tingkat_darurat   # key prioritas, dipakai Heap. None dulu saat
+                                                  # registrasi, baru diisi angka 1-5 setelah triase
 
     def __str__(self):
+        # Method ini otomatis dipanggil setiap kali objek Pasien di-print()
+        # atau dimasukkan ke f-string, supaya tampilannya rapi (bukan
+        # <Pasien object at 0x...> bawaan Python)
         return (f"[ID:{self.id_pasien}] {self.nama} | Gejala: {self.gejala} "
                 f"| Tingkat Darurat: {self.tingkat_darurat}")
