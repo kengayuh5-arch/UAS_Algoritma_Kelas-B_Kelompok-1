@@ -52,3 +52,58 @@ Undo Tindakan Terakhir    -> Stack (pop)
 | **Binary Heap (Min-Heap)** | Penentuan prioritas penanganan berdasarkan tingkat kegawatan (triase) |
 | **Binary Search Tree (BST)** | Database pasien rawat inap, key = `id_pasien` |
 | **Stack** | Riwayat tindakan medis & mekanisme undo (LIFO) |
+
+## Cara Menjalankan
+
+Program hanya membutuhkan Python 3 standar (tidak ada dependensi
+tambahan yang perlu di-*install*).
+
+```bash
+git clone <link-repo-kalian>
+cd sistem_ugd
+python main.py
+```
+
+### Menjalankan di Google Colab (opsional)
+
+Meski proyek ini dikumpulkan lewat GitHub, project tetap bisa
+dijalankan di Colab bila diperlukan:
+
+```python
+!git clone <link-repo-kalian>
+%cd sistem_ugd
+!python main.py
+```
+
+## Operasi yang Diimplementasikan
+
+- **Queue** (`structures/queue.py`): `enqueue`, `dequeue`, `peek`, `display`
+- **Stack** (`structures/stack.py`): `push`, `pop`, `peek`, `display`
+- **BST** (`structures/bst.py`): `insert`, `search`, `delete`, `inorder_traversal`, `height`, `node_count`
+  - `delete` digunakan pada menu **"Pasien Pulang / Keluar Rawat Inap"** — pasien yang sudah pulang dihapus dari database rawat inap
+- **Binary Heap** (`structures/heap.py`): `insert`, `delete_root`, `peek`, `_heapify_up`, `_heapify_down`, `display`
+
+## Alasan Pemilihan Traversal BST: Inorder
+
+Inorder traversal pada BST dengan key `id_pasien` menghasilkan data
+terurut menaik berdasarkan ID, sehingga cocok untuk menampilkan
+daftar pasien rawat inap secara rapi dan mudah dibaca petugas.
+
+## Alasan Pemilihan Min-Heap
+
+`tingkat_darurat = 1` berarti **paling darurat**. Dengan Min-Heap,
+nilai terkecil selalu berada di root sehingga pasien paling darurat
+selalu diproses lebih dulu (`delete_root`).
+
+## Analisis Kompleksitas Waktu (Big-O)
+
+| Struktur Data | Operasi | Kompleksitas |
+|---|---|---|
+| Queue | enqueue, dequeue, peek | O(1) |
+| Queue | display | O(n) |
+| Stack | push, pop, peek | O(1) |
+| Stack | display | O(n) |
+| BST | insert, search, delete | O(log n) rata-rata, O(n) *worst-case* (skewed) |
+| BST | inorder_traversal, height, |node_count | O(n), O(n), O(1) |
+| Heap | insert, delete_root | O(log n) |
+| Heap | peek | O(1) |
