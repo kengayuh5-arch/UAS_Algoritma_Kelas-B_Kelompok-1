@@ -82,6 +82,7 @@ selalu diproses lebih dulu (`delete_root`).
 | Stack | push, pop, peek | O(1) |
 | Stack | display | O(n) |
 | BST | insert, search, delete | O(log n) rata-rata, O(n) *worst-case* (skewed) |
-| BST | inorder_traversal, height, |node_count | O(n), O(n), O(1) |
+| BST | inorder_traversal, height, | O(n) |
+| BST | node_count | O(1) |
 | Heap | insert, delete_root | O(log n) |
 | Heap | peek | O(1) |
