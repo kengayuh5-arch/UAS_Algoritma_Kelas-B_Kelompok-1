@@ -121,12 +121,12 @@ class SistemUGD:
         print(f"\n[OK] Pasien '{pasien.nama}' telah ditangani, dicatat sebagai "
               f"rawat inap (BST), dan tindakan dicatat ke riwayat (Stack).")
 
-    # ---------- MENU 4: LIHAT DATABASE RAWAT INAP (BST) ----------
+    #MENU 4: LIHAT DATABASE RAWAT INAP (BST)
     def lihat_database_rawat_inap(self):
         print("\n=== DATABASE PASIEN RAWAT INAP (BST - Inorder Traversal) ===")
         self.db_rawat_inap.display()   # tampil terurut ID karena pakai inorder traversal
 
-    # ---------- MENU 5: UNDO TINDAKAN TERAKHIR (STACK) ----------
+    #MENU 5: UNDO TINDAKAN TERAKHIR (STACK)
     def undo_tindakan(self):
         print("\n=== BATALKAN (UNDO) TINDAKAN TERAKHIR ===")
         if self.riwayat_tindakan.is_empty():
@@ -150,7 +150,7 @@ class SistemUGD:
             # catatannya saja dari riwayat.
             print(f"[OK] Tindakan berikut telah dibatalkan (undo):\n   {catatan}")
 
-    # ---------- MENU TAMBAHAN: LIHAT STATUS SEMUA STRUKTUR DATA ----------
+    #MENU TAMBAHAN: LIHAT STATUS SEMUA STRUKTUR DATA\
     def lihat_status_sistem(self):
         # Menu ini tidak mengubah data apapun, cuma menampilkan isi
         # keempat struktur data sekaligus untuk keperluan demo/cek
@@ -167,7 +167,7 @@ class SistemUGD:
         print("\n[4] STACK - Riwayat Tindakan Medis")
         self.riwayat_tindakan.display()
 
-    # ---------- MENU 6: PASIEN PULANG / KELUAR RAWAT INAP (HAPUS DARI BST) ----------
+    #MENU 6: PASIEN PULANG / KELUAR RAWAT INAP (HAPUS DARI BST)
     def pasien_pulang(self):
         print("\n=== PASIEN PULANG (KELUAR DARI RAWAT INAP) ===")
         if self.db_rawat_inap.node_count() == 0:
@@ -203,7 +203,7 @@ class SistemUGD:
         else:
             print("[ERROR] Gagal menghapus data pasien.")
 
-    # ---------- MENU TAMBAHAN: CARI PASIEN DI BST ----------
+    #MENU TAMBAHAN: CARI PASIEN DI BST
     def cari_pasien(self):
         print("\n=== CARI PASIEN RAWAT INAP (BST) ===")
         try:

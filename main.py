@@ -12,9 +12,9 @@ Cara menjalankan:
 """
 
 from services.sistem_ugd import SistemUGD
-# File ini SENGAJA tidak berisi logika struktur data/algoritma apapun.
-# Tugasnya murni menampilkan menu dan meneruskan pilihan user ke method
-# yang sesuai di SistemUGD. Ini memisahkan "tampilan" dari "logika bisnis".
+
+# File ini untuk menampilkan menu dan meneruskan pilihan user ke method
+# yang sesuai di SistemUGD. Memisahkan "tampilan" dari "logika bisnis".
 
 
 def tampilkan_menu():
@@ -42,7 +42,7 @@ def main():
         pilihan = input("Pilih menu (0-8): ").strip()
 
         # setiap pilihan tinggal memanggil method yang sudah dibuat
-        # di services/sistem_ugd.py -> main.py tidak perlu tahu
+        # di services/sistem_ugd.py -> main.py tidak perlu
         # detail cara kerja Queue/Stack/BST/Heap di dalamnya
         if pilihan == "1":
             sistem.registrasi_pasien()
