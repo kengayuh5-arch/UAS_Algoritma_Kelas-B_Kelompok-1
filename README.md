@@ -53,28 +53,6 @@ Undo Tindakan Terakhir    -> Stack (pop)
 | **Binary Search Tree (BST)** | Database pasien rawat inap, key = `id_pasien` |
 | **Stack** | Riwayat tindakan medis & mekanisme undo (LIFO) |
 
-## Cara Menjalankan
-
-Program hanya membutuhkan Python 3 standar (tidak ada dependensi
-tambahan yang perlu di-*install*).
-
-```bash
-git clone <link-repo-kalian>
-cd sistem_ugd
-python main.py
-```
-
-### Menjalankan di Google Colab (opsional)
-
-Meski proyek ini dikumpulkan lewat GitHub, project tetap bisa
-dijalankan di Colab bila diperlukan:
-
-```python
-!git clone <link-repo-kalian>
-%cd sistem_ugd
-!python main.py
-```
-
 ## Operasi yang Diimplementasikan
 
 - **Queue** (`structures/queue.py`): `enqueue`, `dequeue`, `peek`, `display`
