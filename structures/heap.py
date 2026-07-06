@@ -1,17 +1,27 @@
 """
 structures/heap.py
 
-BINARY HEAP (MIN-HEAP) - PENENTUAN PRIORITAS TRIASE
-Implementasi manual berbasis array/list Python biasa
-(TIDAK menggunakan heapq atau PriorityQueue bawaan Python).
+BINARY HEAP (MIN-HEAP) UNTUK MENENTUKAN PRIORITAS TRIASE PASIEN
 
-Operasi wajib: insert, delete_root, peek, heapify_up, heapify_down, display
-Kompleksitas: insert O(log n), delete_root O(log n), peek O(1)
+Struktur data ini diimplementasikan secara manual menggunakan list Python
+tanpa memanfaatkan modul heapq maupun PriorityQueue.
 
-Alasan Min-Heap:
-    tingkat_darurat = 1 berarti PALING darurat. Dengan Min-Heap, nilai
-    terkecil selalu berada di root, sehingga pasien paling darurat
-    selalu berada di posisi teratas dan bisa ditangani lebih dulu.
+Operasi yang disediakan:
+- insert
+- delete_root
+- peek
+- heapify_up
+- heapify_down
+- display
+
+Kompleksitas waktu:
+- insert        : O(log n)
+- delete_root   : O(log n)
+- peek          : O(1)
+
+Pada sistem ini digunakan Min-Heap karena pasien dengan nilai
+tingkat_darurat paling kecil memiliki prioritas penanganan tertinggi.
+Dengan demikian, pasien yang paling darurat akan selalu berada pada root.
 """
 
 
